@@ -16,7 +16,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
     var todo = new Todo(req.body);
-    todo.status = false;
     todo.save(function(err, todo) {
         if (err) return next(err);
         res.status(201);
